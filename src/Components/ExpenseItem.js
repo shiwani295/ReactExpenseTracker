@@ -5,6 +5,7 @@ function ExpenseItem(props) {
     <div className="Parent-div">
       <div className="Add-New-Expense">Add New Expenses </div>
       <br></br>
+
       {props.ExpData.map((item) => {
         const year = item.date.getFullYear();
         const Month = item.date.toLocaleDateString("en-US", { month: "long" });
