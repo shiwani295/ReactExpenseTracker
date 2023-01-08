@@ -2,21 +2,33 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>;
 const ExpenseForm = () => {
-  //create the useState with title amount date (t-5)
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setenteredDate] = useState("");
-
+  //(t-6) using one state onstead of multiple state
+  const [UserInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate,
+  });
   const TitleHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    setUserInput({
+      ...UserInput,
+      enteredTitle: event.target.value,
+    });
   };
+
   const AmountHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    setUserInput({
+      ...UserInput,
+      enteredAmount: event.target.value,
+    });
   };
   const DateHandler = (event) => {
-    setenteredDate(event.target.value);
+    setUserInput({
+      ...UserInput,
+      enteredDate: event.target.value,
+    });
+    //setenteredDate(event.target.value);
   };
-  //End create the useState with title amount date (t-5)
+  // (t-6)
   return (
     <div className="ExpForm">
       <form>
