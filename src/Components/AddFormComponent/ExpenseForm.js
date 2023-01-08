@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ExpenseForm.css";
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>;
 const ExpenseForm = () => {
+  //create the useState with title amount date (t-5)
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setenteredDate] = useState("");
+
   const TitleHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredTitle(event.target.value);
   };
   const AmountHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredAmount(event.target.value);
   };
   const DateHandler = (event) => {
-    console.log(event.target.value);
+    setenteredDate(event.target.value);
   };
-
+  //End create the useState with title amount date (t-5)
   return (
     <div className="ExpForm">
       <form>

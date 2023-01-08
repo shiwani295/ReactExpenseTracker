@@ -8,5 +8,4 @@ function NewExpense() {
     </div>
   );
 }
-
 export default NewExpense;
