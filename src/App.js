@@ -1,4 +1,5 @@
 import React from "react";
+import NewExpense from "./Components/AddFormComponent/NewExpense";
 import ExpenseItem from "./Components/ExpenseItem";
 
 function App() {
@@ -29,7 +30,12 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-  return <ExpenseItem ExpData={expenses} />;
+  return (
+    <>
+      <NewExpense />
+      <ExpenseItem ExpData={expenses} /> ;
+    </>
+  );
 }
 
 export default App;

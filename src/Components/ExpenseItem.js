@@ -1,11 +1,12 @@
 import "./ExpenseItem.css";
 import SingleExpenseItem from "./SingleExpenseItem";
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>;
 function ExpenseItem(props) {
+  const AddNewExpense = () => {
+    alert("hello");
+  };
   return (
     <div className="Parent-div">
-      <div className="Add-New-Expense">Add New Expenses </div>
-      <br></br>
-
       {props.ExpData.map((item) => {
         const year = item.date.getFullYear();
         const Month = item.date.toLocaleDateString("en-US", { month: "long" });

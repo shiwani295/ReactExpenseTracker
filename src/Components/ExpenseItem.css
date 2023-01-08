@@ -1,7 +1,11 @@
+* {
+    box-sizing: border-box;
+  }
 .Parent-div{
-    background-color: #919191;
+    background-color: #7ce7db;
     padding: 31px;
     border-radius: 9px;
+    margin: 30px;
 }
 /* Add new exp css start */
 .Add-New-Expense{
@@ -17,8 +21,8 @@
 .Expense-item{
     padding: 10px;
     margin-bottom: 10px;
-    color: white;
-    background-color: #4b4b4b;  
+    color: #2a2a2a;
+    background-color: #ffffff;  
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-radius: 12px; 
 }
@@ -28,20 +32,19 @@
 }
 .Expense-Item-amount{
     float: right;
-    font-size: 1rem;
     font-weight: bold;
     padding: 0.5rem;
     border-radius: 12px;
     margin-top: -46px;
-    background-color: #40005d;
+    background-color: #7ce7db;
     border: 1px solid white;
 } 
 
 
 /* date expense block start  */
 .Expense-date{
-    background-color: #2a2a2a;
-    color: white;
+    background-color: #7ce7db;
+    color: #2a2a2a;
     padding: 6px;
     border: 1px solid #ececec;
     border-radius: 12px;
@@ -67,4 +70,20 @@
     font-weight: bold;
 }
 /* date expense block end */
-
+@media (min-width: 580px) {
+    .expense-item__description {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex: 1;
+    }
+  
+    .expense-item__description h2 {
+      font-size: 1.25rem;
+    }
+  
+    .expense-item__price {
+      font-size: 1.25rem;
+      padding: 0.5rem 1.5rem;
+    }
+  }

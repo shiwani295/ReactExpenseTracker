@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function SingleExpenseItem(props) {
   const DeleteOItemHandler = () => {
     const para = document.getElementById(props.item.id);
@@ -19,10 +18,18 @@ function SingleExpenseItem(props) {
         <div className="Item-year">{props.time.year} </div>
         <div className="Item-day">{props.time.Day} </div>
       </div>
-      <h3 className="Expense-Item-title">{props.item.title}</h3>
-      <div className="Expense-Item-amount">{amount}</div>
-      <button onClick={DeleteOItemHandler}>Remove</button>
-      <button onClick={UpdateItemHandler}>Update</button>
+      <div>
+        <h3 className="Expense-Item-title">{props.item.title}</h3>
+        <div className="Expense-Item-amount">{amount}</div>
+
+        <div className="Deletebutton" style={{ float: "right" }}>
+          <button onClick={DeleteOItemHandler}>Remove</button>
+        </div>
+
+        <div className="Updatebutton">
+          <button onClick={UpdateItemHandler}>Update</button>
+        </div>
+      </div>
     </div>
   );
 }
