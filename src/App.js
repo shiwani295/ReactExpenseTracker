@@ -30,9 +30,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  // here parent app.js  and child newExpense (we get data child to parent)
+  const AddExpenseHandler = (data) => {
+    console.log(data);
+  };
   return (
     <>
-      <NewExpense />
+      {/* form Components which describe child() to parent or parent to child */}
+      <NewExpense onAddExpense={AddExpenseHandler} />
       <ExpenseItem ExpData={expenses} /> ;
     </>
   );

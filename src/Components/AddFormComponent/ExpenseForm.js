@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setenteredDate] = useState("");
 
-  //(t-8) add all the details and show in screen from input field
+  //(t-7) Submitting the form
 
   const TitleHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -18,6 +18,7 @@ const ExpenseForm = () => {
     setenteredDate(event.target.value);
   };
 
+  //form submit
   const FormSubmitHandler = (event) => {
     event.preventDefault();
     const expenseData = {
@@ -25,7 +26,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: enteredDate,
     };
-    console.log(expenseData);
+    //that is comefrom parent (NewExpense) send the data (expenseData) to parent
+    props.onSaveExpenseData(expenseData);
   };
   return (
     <div className="ExpForm">
@@ -43,6 +45,7 @@ const ExpenseForm = () => {
             <label>Expense Amount</label>
             <input
               type="number"
+              step="any"
               placeholder="Enter the Expense Amount"
               onChange={AmountHandler}
             />
@@ -51,8 +54,6 @@ const ExpenseForm = () => {
             <label> Expense Date</label>
             <input
               type="date"
-              min="0.012019-01-01"
-              max="2023-12-30"
               placeholder="Enter the Expense Date"
               onChange={DateHandler}
             />
