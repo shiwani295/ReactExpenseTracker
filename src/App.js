@@ -1,4 +1,5 @@
 import React from "react";
+import Expense from "./Components/Year_ExpenseFilter/Expense";
 import NewExpense from "./Components/AddFormComponent/NewExpense";
 import ExpenseItem from "./Components/ExpenseItem";
 
@@ -39,6 +40,10 @@ function App() {
       {/* form Components which describe child() to parent or parent to child */}
       <NewExpense onAddExpense={AddExpenseHandler} />
       <ExpenseItem ExpData={expenses} /> ;
+      <Expense />
+      <br></br>
+      <br></br>
+      <br></br>
     </>
   );
 }
