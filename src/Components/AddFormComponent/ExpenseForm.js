@@ -1,35 +1,27 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-<<<<<<< HEAD
 const ExpenseForm = (props) => {
-=======
-const ExpenseForm = () => {
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setenteredDate] = useState("");
 
-<<<<<<< HEAD
-  //(t-7) Submitting the form
-=======
-  //(t-8) add all the details and show in screen from input field
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
-
   const TitleHandler = (event) => {
     setEnteredTitle(event.target.value);
+    // console.log("title");
   };
 
   const AmountHandler = (event) => {
     setEnteredAmount(event.target.value);
+    // console.log("amount");
   };
   const DateHandler = (event) => {
-    setenteredDate(event.target.value);
+    //console.log(event.target.value);
+    //this doing for get date formate which you send by form
+    const date = new Date(event.target.value);
+    setenteredDate(date);
   };
 
-<<<<<<< HEAD
   //form submit
-=======
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
   const FormSubmitHandler = (event) => {
     event.preventDefault();
     const expenseData = {
@@ -37,13 +29,10 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: enteredDate,
     };
-<<<<<<< HEAD
-    //that is comefrom parent (NewExpense) send the data (expenseData) to parent
+    //that is come from parent (NewExpense) send the data (expenseData) to parent app.js
     props.onSaveExpenseData(expenseData);
-=======
-    console.log(expenseData);
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
   };
+
   return (
     <div className="ExpForm">
       <form onSubmit={FormSubmitHandler}>
@@ -60,10 +49,7 @@ const ExpenseForm = () => {
             <label>Expense Amount</label>
             <input
               type="number"
-<<<<<<< HEAD
               step="any"
-=======
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
               placeholder="Enter the Expense Amount"
               onChange={AmountHandler}
             />
@@ -72,11 +58,6 @@ const ExpenseForm = () => {
             <label> Expense Date</label>
             <input
               type="date"
-<<<<<<< HEAD
-=======
-              min="0.012019-01-01"
-              max="2023-12-30"
->>>>>>> 5e014a1076327517b792cf34120b297494a38e89
               placeholder="Enter the Expense Date"
               onChange={DateHandler}
             />
