@@ -45,6 +45,14 @@
     background: #7ce7db;
   
   }
+  .Add-Expense{background: #4fa399;
+  text-align: center;
+  margin-left: 34px;
+  margin-right: 34px;
+  margin-top: 33px;
+  border-radius: 8px;
+  padding: 30px;
+}
 
   @media only screen and (max-width: 600px) {
     .new-expense__actions,button {
