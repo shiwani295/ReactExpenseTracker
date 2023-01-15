@@ -13,6 +13,30 @@ function ExpenseItem(props) {
   const filteredExpense = props.ExpData.filter((selectedYear) => {
     return selectedYear.date.getFullYear().toString() === filteredYear;
   });
+  ///
+  let expenseContent = <p className="ExpErrfound"> No Expense Found </p>;
+  if (filteredExpense.length > 0) {
+    expenseContent = filteredExpense.map((item) => {
+      const year = item.date.getFullYear();
+      const Month = item.date.toLocaleDateString("en-US", {
+        month: "long",
+      });
+      const Day = item.date.toLocaleDateString("en-US", {
+        day: "numeric",
+      });
+      return (
+        <>
+          <SingleExpenseItem
+            item={item}
+            key={item.id}
+            time={{ year, Month, Day }}
+          />
+          ;
+        </>
+      );
+    });
+  }
+  ////
   return (
     <>
       {props.ExpData.length > 0 && (
@@ -21,26 +45,7 @@ function ExpenseItem(props) {
             selected={filteredYear}
             onChangeFilter={filterChangeHandler}
           />
-          {filteredExpense.map((item) => {
-            console.log(item);
-            const year = item.date.getFullYear();
-            const Month = item.date.toLocaleDateString("en-US", {
-              month: "long",
-            });
-            const Day = item.date.toLocaleDateString("en-US", {
-              day: "numeric",
-            });
-            return (
-              <>
-                <SingleExpenseItem
-                  item={item}
-                  key={item.id}
-                  time={{ year, Month, Day }}
-                />
-                ;
-              </>
-            );
-          })}
+          {expenseContent}
         </div>
       )}
     </>
