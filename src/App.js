@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Expense from "./Components/Year_ExpenseFilter/Expense";
 import NewExpense from "./Components/AddFormComponent/NewExpense";
 import ExpenseItem from "./Components/ExpenseItem";
 
@@ -30,12 +29,11 @@ const Dummy_expenses = [
   },
 ];
 function App() {
-  const [expenses, setExpense] = useState([]);
+  const [expenses, setExpense] = useState(Dummy_expenses);
 
   // here parent app.js  and child newExpense (we get data child to parent)
   const AddExpenseHandler = (expense) => {
-    console.log(expense);
-    // task 10  you get the data from (form) and
+    // task 10  you get the data from (form) and when sumbit the form show the data in form
     setExpense((prevExpense) => [...prevExpense, expense]);
     // console.log(data);
   };
@@ -43,8 +41,6 @@ function App() {
     <>
       {/* form Components which describe child() to parent or parent to child  */}
       <NewExpense onAddExpense={AddExpenseHandler} />
-      {/* this exppense is a year component  */}
-      <Expense />
       <ExpenseItem ExpData={expenses} />
 
       <br></br>
