@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NewExpense from "./Components/AddFormComponent/NewExpense";
-import ExpenseItem from "./Components/ExpenseItem";
+import ExpenseItem from "./Components/Expense/ExpenseItem";
 
 const Dummy_expenses = [
   {
@@ -39,7 +39,6 @@ function App() {
   };
   return (
     <>
-      {/* form Components which describe child() to parent or parent to child  */}
       <NewExpense onAddExpense={AddExpenseHandler} />
       <ExpenseItem ExpData={expenses} />
 

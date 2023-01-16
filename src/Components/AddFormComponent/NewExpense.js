@@ -12,11 +12,13 @@ function NewExpense(props) {
     setEditing(false);
   };
 
+  //its add about buttons
   const [isEditing, setEditing] = useState(false);
 
   const startEditingHandler = () => {
     setEditing(true);
   };
+  //cancel button
   const stopEditingHandler = () => {
     setEditing(false);
   };
